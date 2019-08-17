@@ -1,13 +1,13 @@
 ---
-title: 本のタイトル
-abstract: 本の概要
-circle: サークル名
-author: 本の作者
-comiket: コミケ
-year: 出版年
-publisher: 印刷会社で印刷製本
+title: ７セグ時計ICを自作する本
+abstract: GreenPAK**勝手に**アプリケーションノート Vol.2
+circle: KY技研
+author: "@_K4ZUKI_"
+comiket: 技術書典７
+year: 2019
+publisher: キンコーズオンラインで印刷製本秋葉原店で受け取り
 docrevision: "1.0"
-# front: images/front-image.png
+front: "images/number-digital2.png"
 verbcolored: false
 # rmnote: false
 
@@ -47,15 +47,15 @@ docx_coreprop:
   subject: "SubjecT" # str
   title: "Title" # str
 
-#  created: "31-Dec-2018" # datetime DD-MMM-YYYY set externally
+  #created: "31-Dec-2018" # datetime DD-MMM-YYYY set externally
   content_status: "Status" # ignored?
   identifier: "ID" # ignored?
   language: "Japanese" # ignored?
   version: "Version" # ignored?
 
   table:
-#    "Normal Table": "Centered"
+    "Normal Table": "Centered"
   paragraph:
-#    "Normal": "Body Text"
-#    "First Paragraph": "Body Text"
+    "Normal": "Body Text"
+    "First Paragraph": "Body Text"
 ...

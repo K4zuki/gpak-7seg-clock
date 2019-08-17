@@ -1,0 +1,12 @@
+
+     EEEE<--(a)
+    D    D
+    D(f) D
+    D    D(b)
+    D    D
+     EEEE<--(g)
+    D    D
+    D(e) D
+    D    D(c)
+    D    D
+     EEEE<--(d)
