@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GPDProject version="8" oldestCompatibleVersion="8" GPDVersion="6.19.004" lastChange="2019/08/15 1:11">
+<GPDProject version="8" oldestCompatibleVersion="8" GPDVersion="6.19.004" lastChange="2019/08/20 22:11">
     <generalProjectSettings/>
     <chip family="04" type="05" friendlyName="GreenPAK 5" partNumber="25" package="4">
-        <nvmData registerLenght="2048">C D E F D 17 28 2F 0 D E F 3D 11 17 3D 12 17 2B 28 0 C D E F 0 0 0 0 0 10 2D 3F 2C 2E 16 3F 18 0 0 2A 3F 3F 15 3F 14 0 0 0 0 2F 0 0 0 0 0 1 1F 0 0 C 0 D 0 E 0 F 0 1F 8 29 8 9 29 9 A 29 A B 29 3D 13 17 17 1F 0 17 1F 0 17 1F 0 C D E C D E C D E C D E F 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 40 C 3C C A0 80 A4 BC 0 80 C 0 A0 0 80 C C 80 0 10 F F1 55 55 0 0 0 0 0 BA D D9 D9 D9 0 0 0 42 40 0 0 0 C 80 70 E 1 0 0 FE 12 10 0 0 0 B0 24 77 0 0 0 0 0 0 17 5 9 60 4 8E 8C E7 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 92 0 5A 0 0 0 A5</nvmData>
-        <checksum crc32="0x1F7F86E3" version="5"/>
+        <nvmData registerLenght="2048">C D E F D 17 28 2F 0 D E F 3D 11 17 3D 12 17 2B 28 0 C D E F 0 0 0 0 0 10 2D 3F 2C 2E 16 3F 18 0 0 2A 3F 3F 15 3F 14 0 0 0 0 2F 0 0 0 0 0 1 1F 0 0 C 0 D 0 E 0 F 0 1F 8 29 8 9 29 9 A 29 A B 29 3D 13 17 17 1F 0 17 1F 0 17 1F 0 C D E C D E C D E C D E F 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 40 C 3C C A0 80 A4 BC 0 80 C 0 A0 0 80 C C 80 0 10 F F1 55 55 0 0 0 0 0 BA D D9 D9 D9 0 0 0 42 40 0 0 0 C 80 70 E 1 0 0 FE 12 10 0 0 0 B0 24 77 0 0 0 0 0 0 17 3B 9 60 4 8E 8C E7 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 92 0 5A 0 0 0 A5</nvmData>
+        <checksum crc32="0x481E654E" version="5"/>
         <asmModel>
             <stateMachine>
                 <asmModel version="2">
@@ -33,36 +33,36 @@
         </asmModel>
         <VDDItem id="0">
             <item id="0" caption="VDD (PIN 1)">
-                <graphics pos="(66.87,126.28)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
+                <graphics pos="(186.12,122.59)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
             </item>
         </VDDItem>
         <IOPad id="1" useCaseMode="1">
             <item id="1" caption="PIN 2">
-                <graphics pos="(-10.17,218.89)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
+                <graphics pos="(129.98,227.50)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
                 <textLabel pos="(-4.86,-26.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">EXT_CLK</textLabel>
             </item>
         </IOPad>
         <IOPad id="2" useCaseMode="1">
             <item id="2" caption="PIN 3">
-                <graphics pos="(-10.17,364.60)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
+                <graphics pos="(129.98,343.70)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
                 <textLabel pos="(-1.51,-26.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">nRESET</textLabel>
             </item>
         </IOPad>
         <IOPad id="3" useCaseMode="2">
             <item id="3" caption="PIN 4">
-                <graphics pos="(-10.17,444.19)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
+                <graphics pos="(129.98,444.19)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
                 <textLabel pos="(3.91,-26.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">1/10</textLabel>
             </item>
         </IOPad>
         <IOPad id="4" useCaseMode="2">
             <item id="4" caption="PIN 5">
-                <graphics pos="(-10.17,518.07)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
-                <textLabel pos="(7.07,-26.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">1/6</textLabel>
+                <graphics pos="(129.98,518.07)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
+                <textLabel pos="(3.91,-26.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">1/60</textLabel>
             </item>
         </IOPad>
         <IOPad id="5" useCaseMode="2">
             <item id="5" caption="PIN 6">
-                <graphics pos="(-10.17,615.38)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
+                <graphics pos="(129.98,615.38)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
                 <textLabel pos="(3.91,-26.00)" angle="0.00" textColor="#ffff00ff" backgroundColor="#14141464">1/24</textLabel>
             </item>
         </IOPad>
@@ -82,7 +82,7 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
             </item>
         </IOPad>
         <item id="8" caption="GND (PIN 9)">
-            <graphics pos="(217.07,124.28)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
+            <graphics pos="(336.32,120.59)" angle="0" flipping="0" hidden="0" tOrigin="(20.00,10.00)"/>
         </item>
         <IOPad id="9" useCaseMode="2">
             <item id="9" caption="PIN 10">
@@ -122,42 +122,42 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
             <graphics pos="(150.89,364.60)" angle="0" flipping="0" hidden="1" tOrigin="(27.50,15.00)"/>
         </item>
         <item id="18" caption="FILTER1/EDGE DET1">
-            <graphics pos="(161.87,218.89)" angle="0" flipping="0" hidden="0" tOrigin="(27.50,15.00)"/>
+            <graphics pos="(256.53,227.50)" angle="0" flipping="0" hidden="0" tOrigin="(27.50,15.00)"/>
         </item>
         <item id="19" caption="P DLY">
-            <graphics pos="(161.87,258.58)" angle="0" flipping="0" hidden="0" tOrigin="(17.50,10.00)"/>
+            <graphics pos="(256.53,267.19)" angle="0" flipping="0" hidden="0" tOrigin="(17.50,10.00)"/>
         </item>
         <LUT id="22" regularShape="0" mode="2">
             <item id="22" caption="2-bit LUT0/DFF/LATCH0">
-                <graphics pos="(337.26,155.89)" angle="180" flipping="2" hidden="0" tOrigin="(20.00,15.00)"/>
+                <graphics pos="(563.47,205.07)" angle="180" flipping="2" hidden="0" tOrigin="(20.00,15.00)"/>
             </item>
         </LUT>
         <LUT id="23" regularShape="0" mode="2">
             <item id="23" caption="2-bit LUT1/DFF/LATCH1">
-                <graphics pos="(547.52,155.89)" angle="180" flipping="2" hidden="0" tOrigin="(20.00,15.00)"/>
+                <graphics pos="(772.50,205.07)" angle="180" flipping="2" hidden="0" tOrigin="(20.00,15.00)"/>
             </item>
         </LUT>
         <LUT id="24" regularShape="0" mode="2">
             <item id="24" caption="2-bit LUT2/DFF/LATCH2">
-                <graphics pos="(773.95,155.89)" angle="180" flipping="2" hidden="0" tOrigin="(20.00,15.00)"/>
+                <graphics pos="(1000.16,205.07)" angle="180" flipping="2" hidden="0" tOrigin="(20.00,15.00)"/>
             </item>
         </LUT>
         <LUT id="25" regularShape="0" mode="2">
             <item id="25" caption="2-bit LUT3/PGEN">
-                <graphics pos="(1009.09,155.89)" angle="180" flipping="2" hidden="0" tOrigin="(20.00,15.00)"/>
+                <graphics pos="(1262.35,205.07)" angle="180" flipping="2" hidden="0" tOrigin="(20.00,15.00)"/>
             </item>
         </LUT>
         <item id="26" caption="3-bit LUT0/DFF/LATCH3">
-            <graphics pos="(339.26,255.22)" angle="0" flipping="0" hidden="0" tOrigin="(25.00,10.00)"/>
+            <graphics pos="(501.54,300.71)" angle="0" flipping="0" hidden="0" tOrigin="(25.00,10.00)"/>
         </item>
         <item id="27" caption="3-bit LUT1/DFF/LATCH4">
-            <graphics pos="(549.52,255.22)" angle="0" flipping="0" hidden="0" tOrigin="(25.00,10.00)"/>
+            <graphics pos="(711.80,300.71)" angle="0" flipping="0" hidden="0" tOrigin="(25.00,10.00)"/>
         </item>
         <item id="28" caption="3-bit LUT2/DFF/LATCH5">
-            <graphics pos="(775.95,255.22)" angle="0" flipping="0" hidden="0" tOrigin="(25.00,10.00)"/>
+            <graphics pos="(938.23,300.71)" angle="0" flipping="0" hidden="0" tOrigin="(25.00,10.00)"/>
         </item>
         <item id="29" caption="3-bit LUT3/DFF/LATCH6">
-            <graphics pos="(1011.09,255.22)" angle="0" flipping="0" hidden="0" tOrigin="(25.00,10.00)"/>
+            <graphics pos="(1163.54,300.71)" angle="0" flipping="0" hidden="0" tOrigin="(25.00,10.00)"/>
         </item>
         <item id="30" caption="3-bit LUT4/DFF/LATCH7">
             <graphics pos="(1293.08,438.87)" angle="0" flipping="0" hidden="0" tOrigin="(25.00,10.00)"/>
@@ -170,7 +170,7 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
         </LUT>
         <LUT id="32" regularShape="0" mode="0">
             <item id="32" caption="3-bit LUT12/DFF/LATCH9">
-                <graphics pos="(1152.91,306.08)" angle="90" flipping="2" hidden="0" tOrigin="(20.00,15.00)"/>
+                <graphics pos="(1315.19,351.57)" angle="90" flipping="2" hidden="0" tOrigin="(20.00,15.00)"/>
             </item>
         </LUT>
         <LUT id="33" regularShape="0" mode="0">
@@ -231,7 +231,7 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
             </item>
         </LUT>
         <item id="44" caption="POR">
-            <graphics pos="(145.07,124.28)" angle="0" flipping="0" hidden="0" tOrigin="(17.50,10.00)"/>
+            <graphics pos="(264.32,120.59)" angle="0" flipping="0" hidden="0" tOrigin="(17.50,10.00)"/>
         </item>
         <item id="45" caption="OSC0">
             <graphics pos="(1192.25,123.16)" angle="0" flipping="0" hidden="1" tOrigin="(25.00,16.00)"/>
@@ -247,7 +247,7 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
         </LUT>
         <CNTDLY id="48" externalClockFrequence="0" externalClockFreqUnit="kHz">
             <item id="48" caption="4-bit LUT1/16-bit CNT1/DLY1/FSM1">
-                <graphics pos="(133.73,364.60)" angle="0" flipping="0" hidden="0" tOrigin="(35.00,16.00)"/>
+                <graphics pos="(280.03,344.93)" angle="0" flipping="0" hidden="0" tOrigin="(35.00,16.00)"/>
             </item>
         </CNTDLY>
         <LUT id="49" regularShape="0" mode="0">
@@ -269,7 +269,7 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
             <points/>
         </wire>
         <wire output="2" input="51" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="4" wireText="NET4" wireState="0">
-            <points>(52.00,229.00); (141.00,229.00)</points>
+            <points>(192.00,238.00); (236.00,238.00)</points>
         </wire>
         <wire output="26" input="52" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="2" wireText="CLK" wireState="1">
             <points/>
@@ -281,43 +281,43 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
             <points/>
         </wire>
         <wire output="30" input="62" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="9" wireText="NET9" wireState="0">
-            <points>(357.00,131.00); (357.00,125.00); (312.00,125.00); (312.00,261.00); (318.00,261.00)</points>
+            <points>(583.00,181.00); (583.00,175.00); (467.00,175.00); (467.00,306.00); (481.00,306.00)</points>
         </wire>
         <wire output="35" input="55" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="6" wireText="C" wireState="1">
             <points/>
         </wire>
         <wire output="31" input="65" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="18" wireText="NET18" wireState="0">
-            <points>(568.00,131.00); (568.00,125.00); (515.00,125.00); (515.00,261.00); (529.00,261.00)</points>
+            <points>(793.00,181.00); (793.00,175.00); (671.00,175.00); (671.00,306.00); (691.00,306.00)</points>
         </wire>
         <wire output="32" input="68" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="20" wireText="NET20" wireState="0">
-            <points>(794.00,131.00); (794.00,125.00); (743.00,125.00); (743.00,261.00); (755.00,261.00)</points>
+            <points>(1020.00,181.00); (1020.00,175.00); (899.00,175.00); (899.00,306.00); (917.00,306.00)</points>
         </wire>
         <wire output="37" input="59" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="8" wireText="A" wireState="1">
             <points/>
         </wire>
-        <wire output="33" input="71" autoRouting="0" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="25" wireText="NET25" wireState="0">
-            <points>(1029.00,131.00); (1029.00,125.00); (971.00,125.00); (971.00,261.00); (990.00,261.00)</points>
+        <wire output="33" input="71" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="25" wireText="NET25" wireState="0">
+            <points>(1282.00,181.00); (1282.00,175.00); (1127.00,175.00); (1127.00,306.00); (1143.00,306.00)</points>
         </wire>
         <wire output="77" input="63" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="26" wireText="NET26" wireState="0">
-            <points>(1137.00,322.00); (365.00,322.00); (365.00,295.00)</points>
+            <points>(1299.00,367.00); (527.00,367.00); (527.00,341.00)</points>
         </wire>
         <wire output="77" input="66" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="26" wireText="NET26" wireState="0">
-            <points>(1137.00,322.00); (575.00,322.00); (575.00,295.00)</points>
+            <points>(1299.00,367.00); (737.00,367.00); (737.00,341.00)</points>
         </wire>
         <wire output="77" input="69" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="26" wireText="NET26" wireState="0">
-            <points>(1137.00,322.00); (801.00,322.00); (801.00,295.00)</points>
+            <points>(1299.00,367.00); (964.00,367.00); (964.00,341.00)</points>
         </wire>
         <wire output="77" input="72" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="26" wireText="NET26" wireState="0">
-            <points>(1137.00,322.00); (1037.00,322.00); (1037.00,295.00)</points>
+            <points>(1299.00,367.00); (1189.00,367.00); (1189.00,341.00)</points>
         </wire>
         <wire output="30" input="64" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="9" wireText="NET9" wireState="0">
-            <points>(357.00,131.00); (357.00,125.00); (503.00,125.00); (503.00,271.00); (529.00,271.00)</points>
+            <points>(583.00,181.00); (583.00,175.00); (659.00,175.00); (659.00,316.00); (691.00,316.00)</points>
         </wire>
         <wire output="31" input="67" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="18" wireText="NET18" wireState="0">
-            <points>(568.00,131.00); (568.00,125.00); (731.00,125.00); (731.00,271.00); (755.00,271.00)</points>
+            <points>(793.00,181.00); (793.00,175.00); (887.00,175.00); (887.00,316.00); (917.00,316.00)</points>
         </wire>
         <wire output="32" input="70" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="20" wireText="NET20" wireState="0">
-            <points>(794.00,131.00); (794.00,125.00); (959.00,125.00); (959.00,271.00); (990.00,271.00)</points>
+            <points>(1020.00,181.00); (1020.00,175.00); (1115.00,175.00); (1115.00,316.00); (1143.00,316.00)</points>
         </wire>
         <wire output="36" input="57" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="0" wireText="B" wireState="1">
             <points/>
@@ -341,7 +341,7 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
             <points/>
         </wire>
         <wire output="41" input="74" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="7" wireText="NET7" wireState="0">
-            <points>(1214.00,454.00); (1251.00,454.00); (1251.00,444.00); (1272.00,444.00)</points>
+            <points>(1214.00,454.00); (1259.00,454.00); (1259.00,444.00); (1272.00,444.00)</points>
         </wire>
         <wire output="27" input="73" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="10" wireText="nCLK" wireState="1">
             <points/>
@@ -439,7 +439,7 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
         <wire output="1" input="9" autoRouting="1" pen="#ff8000ff;1.00;1;32;128" protected="1" CWLid="-1" wireText="VDD" wireState="1">
             <points/>
         </wire>
-        <wire output="81" input="8" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="19" wireText="1/6" wireState="1">
+        <wire output="81" input="8" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="19" wireText="1/60" wireState="1">
             <points/>
         </wire>
         <wire output="80" input="10" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="21" wireText="1/24" wireState="1">
@@ -479,7 +479,7 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
             <points/>
         </wire>
         <wire output="4" input="102" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="13" wireText="NET13" wireState="0">
-            <points>(52.00,380.00); (99.00,380.00); (99.00,385.00); (113.00,385.00)</points>
+            <points>(192.00,359.00); (239.00,359.00); (239.00,365.00); (259.00,365.00)</points>
         </wire>
         <wire output="56" input="75" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="12" wireText="nRESET" wireState="1">
             <points/>
@@ -506,7 +506,7 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
     <emulatorConfiguration version="1">
         <settings>
             <autoApply value="0"/>
-            <platformSelector id="0"/>
+            <platformSelector id="3"/>
         </settings>
         <platform id="0" friendlyName="GreenPAK DIP Development Platform">
             <lastConfiguration modified="1">
@@ -596,7 +596,7 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
     <simulationConfiguration version="5" compatibleVersion="5" activePreset="-1">
         <draftPreset>
             <simulationPreset index="-1" name="Default" customGroupLayout="true">
-                <tran max="2.000000e+01|5" start="0.000000e+00|5" step="2.000000e+01|5" stop="1.200000e+01|4" temp="25" uic="false" vdd="3.300000e+00|4"/>
+                <tran max="4.000000e+00|5" start="0.000000e+00|5" step="4.000000e+00|5" stop="2.000000e-01|4" temp="25" uic="false" vdd="3.300000e+00|4"/>
                 <probes>
                     <probe category="0" componentType="2" componentNumber="2" pinNumber="1"/>
                     <probe category="0" componentType="8" componentNumber="2" pinNumber="0"/>
@@ -625,7 +625,7 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
                 </gnds>
                 <voltageSources>
                     <vsrc category="0" componentType="1" componentNumber="0" pinNumber="0" hasRC="1" intR="1.000000e+01|4" intC="1.000000e+02|7" showOnePer="0" hasLimitedVoltage="0" td="0.000000e+00|5" viewName="VDD" V="3.300000e+00|4" tr="1.000000e+00|5" type="ramp"/>
-                    <vsrc category="0" componentType="2" componentNumber="2" pinNumber="0" hasRC="0" intR="1.000000e+01|4" intC="1.000000e+01|8" showOnePer="0" hasLimitedVoltage="1" td="1.145000e+00|5" viewName="PIN 2 (Src)" dutyCycle="10" fr="1.000000e+00|4" maxU="3.300000e+00|4" minU="0.000000e+00|4" tf="1.000000e+00|6" tr="1.000000e+00|6" type="clock"/>
+                    <vsrc category="0" componentType="2" componentNumber="2" pinNumber="0" hasRC="0" intR="1.000000e+01|4" intC="1.000000e+01|8" showOnePer="0" hasLimitedVoltage="1" td="1.145000e+00|5" viewName="PIN 2 (Src)" dutyCycle="10" fr="1.000000e+02|4" maxU="3.300000e+00|4" minU="0.000000e+00|4" tf="1.000000e+00|6" tr="1.000000e+00|6" type="clock"/>
                 </voltageSources>
                 <groups>
                     <group name="[P] CLK">
@@ -648,7 +648,7 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
                             <waveform category="1" componentType="9" componentNumber="7" pinNumber="0"/>
                         </waveforms>
                     </group>
-                    <group name="[P] 1/6">
+                    <group name="[P] 1/60">
                         <waveforms>
                             <waveform category="1" componentType="9" componentNumber="13" pinNumber="0"/>
                         </waveforms>
@@ -784,7 +784,7 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
                     <waveform category="1" componentType="9" componentNumber="12" pinNumber="0" name="[P] 1/24">
                         <waveformSetup penColor="#fda740" penWidth="2" style="0" attributes="1" symbol="-1" symSize="6" symColor="#ff0000"/>
                     </waveform>
-                    <waveform category="1" componentType="9" componentNumber="13" pinNumber="0" name="[P] 1/6">
+                    <waveform category="1" componentType="9" componentNumber="13" pinNumber="0" name="[P] 1/60">
                         <waveformSetup penColor="#26e056" penWidth="2" style="0" attributes="1" symbol="-1" symSize="6" symColor="#ff0000"/>
                     </waveform>
                     <waveform category="1" componentType="16" componentNumber="1" pinNumber="0" name="[P] nRESET">
