@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GPDProject version="8" oldestCompatibleVersion="8" GPDVersion="6.19.004" lastChange="2019/08/20 22:11">
+<GPDProject version="8" oldestCompatibleVersion="8" GPDVersion="6.21.005" lastChange="2020/04/11 20:30">
     <generalProjectSettings/>
     <chip family="04" type="05" friendlyName="GreenPAK 5" partNumber="25" package="4">
-        <nvmData registerLenght="2048">C D E F D 17 28 2F 0 D E F 3D 11 17 3D 12 17 2B 28 0 C D E F 0 0 0 0 0 10 2D 3F 2C 2E 16 3F 18 0 0 2A 3F 3F 15 3F 14 0 0 0 0 2F 0 0 0 0 0 1 1F 0 0 C 0 D 0 E 0 F 0 1F 8 29 8 9 29 9 A 29 A B 29 3D 13 17 17 1F 0 17 1F 0 17 1F 0 C D E C D E C D E C D E F 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 40 C 3C C A0 80 A4 BC 0 80 C 0 A0 0 80 C C 80 0 10 F F1 55 55 0 0 0 0 0 BA D D9 D9 D9 0 0 0 42 40 0 0 0 C 80 70 E 1 0 0 FE 12 10 0 0 0 B0 24 77 0 0 0 0 0 0 17 3B 9 60 4 8E 8C E7 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 92 0 5A 0 0 0 A5</nvmData>
-        <checksum crc32="0x481E654E" version="5"/>
+        <nvmData registerLenght="2048">C D E F D 17 28 2F 0 D E F 3D 11 17 3D 12 17 2B 28 0 C D E F 0 0 0 0 0 10 2D 3F 2C 2E 16 3F 18 0 0 2A 3F 3F 15 3F 14 0 0 0 0 2F 0 0 0 0 17 1 1F 0 0 C 0 D 0 E 0 F 0 1F 8 29 8 9 29 9 A 29 A B 29 3D 13 17 1E 1F 0 1E 1F 0 1E 1F 0 C D E C D E C D E C D E F 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 40 C 3C C BE CE A6 BC 0 80 C 0 A0 0 80 C C 80 0 10 F F1 55 55 0 0 0 0 0 BA D D9 D9 D9 0 0 0 42 40 0 0 0 C 80 70 E 1 0 0 FE 12 10 0 0 40 B0 24 77 0 0 0 0 0 0 17 3B 9 60 4 8E 8C E7 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 92 0 5A 0 0 0 A5</nvmData>
+        <checksum crc32="0xA2EE08CD" version="5"/>
         <asmModel>
             <stateMachine>
                 <asmModel version="2">
@@ -119,7 +119,7 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
             <graphics pos="(150.00,490.00)" angle="0" flipping="0" hidden="1" tOrigin="(22.50,25.00)"/>
         </item>
         <item id="17" caption="FILTER0/EDGE DET0">
-            <graphics pos="(150.89,364.60)" angle="0" flipping="0" hidden="1" tOrigin="(27.50,15.00)"/>
+            <graphics pos="(959.10,521.32)" angle="0" flipping="0" hidden="0" tOrigin="(27.50,15.00)"/>
         </item>
         <item id="18" caption="FILTER1/EDGE DET1">
             <graphics pos="(256.53,227.50)" angle="0" flipping="0" hidden="0" tOrigin="(27.50,15.00)"/>
@@ -493,14 +493,17 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
         <wire output="56" input="155" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="12" wireText="nRESET" wireState="1">
             <points/>
         </wire>
-        <wire output="56" input="76" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="12" wireText="nRESET" wireState="1">
+        <wire output="56" input="50" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="12" wireText="nRESET" wireState="1">
             <points/>
         </wire>
-        <wire output="56" input="79" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="12" wireText="nRESET" wireState="1">
-            <points/>
+        <wire output="25" input="82" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="16" wireText="NET16" wireState="0">
+            <points>(1035.00,532.00); (1091.00,532.00); (1091.00,459.00); (1113.00,459.00)</points>
         </wire>
-        <wire output="56" input="82" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="12" wireText="nRESET" wireState="1">
-            <points/>
+        <wire output="25" input="76" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="16" wireText="NET16" wireState="0">
+            <points>(1035.00,532.00); (1091.00,532.00); (1091.00,540.00); (1113.00,540.00)</points>
+        </wire>
+        <wire output="25" input="79" autoRouting="1" pen="#00ff00ff;1.00;1;32;128" protected="0" CWLid="16" wireText="NET16" wireState="0">
+            <points>(1035.00,532.00); (1091.00,532.00); (1091.00,627.00); (1113.00,627.00)</points>
         </wire>
     </chip>
     <emulatorConfiguration version="1">
@@ -593,7 +596,7 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
             <savedConfigurations/>
         </platform>
     </emulatorConfiguration>
-    <simulationConfiguration version="5" compatibleVersion="5" activePreset="-1">
+    <simulationConfiguration version="6" compatibleVersion="6" activePreset="-1">
         <draftPreset>
             <simulationPreset index="-1" name="Default" customGroupLayout="true">
                 <tran max="4.000000e+00|5" start="0.000000e+00|5" step="4.000000e+00|5" stop="2.000000e-01|4" temp="25" uic="false" vdd="3.300000e+00|4"/>
