@@ -1,3 +1,7 @@
+::: rmnote
+![](images/MilkyWay_Stargate_blank.svg)
+:::
+
 # まえがき {-}
 
 この本は、*ふとした思いつきで夜でも視認性の良い時計が欲しくなったので作ってみ*るまでをまとめた
@@ -30,6 +34,7 @@ SLG46826は専用の水晶発振回路ブロックを持っていないので、
 早速32.768KHz（~~めんどいので~~今後は32Kと表記）の水晶発振回路について調べます。
 よくあるマイコンを使った作例では簡単に水晶1個と12pFくらいのコンデンサ2個でちゃちゃっと32Kを用意しちゃってますが、
 アプリケーションノートによると、20M&Omega;、1M&Omega;、330pFなどの周辺部品を必要とするようです。
+:::
 
 ## ＢＣＤ（１０進）カウンタ部
 
@@ -52,3 +57,21 @@ BCDカウンタの出力をもとに7セグLEDを光らせるための信号を�
 ## クロック分周部
 ## 時刻セットをどうするか
 ## まとめ
+
+# あとがき {-}
+
+- 原稿PDFはこのQRコードからたどってください ![](images/QRcode.png){#fig:manuscript width=30%}
+- `{\large`{=latex}[Stargate SG-1]{.underline}っていう海外SFドラマシリーズ知ってる人いますか？`}`{=latex}
+- 表紙の画像は
+  [<https://commons.wikimedia.org/wiki/File:MilkyWay_Stargate_blank.svg>]{.underline}から拝借しました。
+  [[CC BY-SA 3.0 ライセンス]{.underline}](https://creativecommons.org/licenses/by-sa/3.0/deed.en)です。
+
+## 謝辞 {-}
+
+「Chevron1」ならびに「Chevron7」の企画・設計に協力してくださった諸氏に謝意を示します（敬称略）。
+
+- そんそん(<https://twitter.com/sonson1919>)
+- あおいさや(<https://twitter.com/La_zlo>)
+- 余熱＠れすぽん(<https://twitter.com/yone2_net>)
+- niszet(<https://twitter.com/niszet0>)
+- Kashiken(<https://twitter.com/kashiken>)
