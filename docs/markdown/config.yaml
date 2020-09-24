@@ -1,15 +1,20 @@
 ---
 title: ７セグ時計ICを自作する本
-abstract: GreenPAK**勝手に**アプリケーションノート Vol.2
+subtitle: Chevron7 *Lock*
 circle: KY技研
 author: "@_K4ZUKI_"
 comiket: 技術書典７
 year: 2019
 publisher: キンコーズオンラインで印刷製本秋葉原店で受け取り
 docrevision: "1.0"
-front: "images/number-digital2.png"
+front: "`svg/MilkyWay_Stargate_blank.pdf`{=latex}"
 verbcolored: false
-# rmnote: false
+rmnote: true
+
+frontoption:
+  - scale=1.8
+  - position=current page.south
+  - angle=0
 
 svgbob:
   font-family: "Source Code Pro"
