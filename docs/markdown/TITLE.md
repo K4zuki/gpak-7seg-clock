@@ -31,7 +31,11 @@
 4桁のBCDにエンコードするブロック（Config-1）、LEDのダイナミック点灯とＢＣＤ−７セグデコーダブロック（Config-2）
 に大別され、それぞれにSLG46826を1個ずつ割り当てています（[@fig:block-diagram]）。LEDはカソードコモンタイプを使います。
 
+\newpage
+
 [Block diagram](data/block-diagram-2.bob){.svgbob #fig:block-diagram}
+
+\newpage
 
 ## クロック生成部（RX-8581NB RTC）
 
@@ -60,22 +64,118 @@ GPAKにはI^2^CやSPIなどのシリアル信号をホストする能力はあ�
 アプリケーションノートによると、20M&Omega;、1M&Omega;、330pFなどの周辺部品を必要とするようです。
 :::
 
-## 計時（分周）部
+## 計時（分周）部（Config-1）
 
-![分・秒・早送りクロック生成部](images/clock-divider-block.png){width=120mm}
+![分・秒・早送りクロック生成部](images/clock-divider-block.png){width=120mm #fig:clock-divider-block}
 
 ### 分・秒クロック生成部
 
 今作の表示は時分だけで秒はコロンの明滅に使います。原発振32KHzを分周して秒クロック（1Hz）を得るために、
 オシレータモジュール`OSC0`と、DFFの代替としてリセットカウンタを使います。リセットカウンタでDFFを代用して分周する方法は
-時クロックの生成にも使います（後述）。
+時クロックのカウントにも使います（後述）。これらのリセットカウンタはマルチファンクションモジュール`MF6`と`MF7`を使っています。
 
 `OSC0`はデフォルト設定では2.048KHzのRC発振器とその分周出力を出しますが、外部ピンからの入力をクロック源とすることもできます。
 クロック源にできるピンは各モジュールで固有であり、`OSC0`はPIN2（IO0）が該当します。
 
-`OSC0`は32Kから2Hzと128Hzに分周します。2Hzをリセットカウンタで分周して秒クロック（1Hz）にして、さらに1Hzを
-再度リセットカウンタで60分周して分クロック（1/60Hz）を得ます。128HzはPGENで分周して32Hzを得て、早送りモードに
-使います。
+`OSC0`は32Kから2Hzと128Hzに分周します。2Hzをリセットカウンタ`CNT6/DLY6`（`MF6`）で分周して秒クロック（1Hz）にして、さらに1Hzを
+再度リセットカウンタ`CNT7/DLY7`（`MF7`）で60分周して分クロック（1/60Hz）を得ます。128Hzは`PGEN`で分周して32Hzを得て、
+早送りモードに使います。コロンの明滅はEN3信号が有効なときに有効になります(`MF6-LUT12`)。
+1Hzと32Hzの切り替えはボタン入力をDFF3でラッチして`LUT13`マルチプレクサ（`MF7`）で選択します。
+
+::: {.table width=[0.5,0.5]}
+Table: `OSC0`のコンフィグ {#tbl:config-osc0}
+
+| Property                 | Value                      |
+|:-------------------------|:---------------------------|
+| Control pin mode         | Force on                   |
+| OSC power mode           | Force Power On             |
+| Clock selector           | EXT CLK (From PIN 2 (IO0)) |
+| 'CLK' predivider by      | 4                          |
+| 'OUT0' second divider by | 64                         |
+| 'OUT1' second divider by | 24                         |
+
+:::
+::: {.table width=[0.5,0.5]}
+Table: `MF6`のコンフィグ; `CNT6/DLY6` "1sec counter"
+
+| Property                | Value              |
+|:------------------------|:-------------------|
+| Mode                    | Reset counter      |
+| Counter data            | 1                  |
+| Output period (typical) | N/D                |
+| Edge select             | Rising             |
+| DLY IN init. value      | Bypass the initial |
+| Output polarity         | Non-inverted (OUT) |
+| Mode signal sync.       | Bypass             |
+| Clock                   | OSC0 /4096         |
+| Clock frequency         | N/D                |
+
+:::
+
+\newpage
+
+::: {.table width=[0.25,0.25,0.25,0.25]}
+Table: `MF6`のコンフィグ; `3-bit LUT12`（Defined by user）
+
+| in2 | in1 | in0 | out |
+|:---:|:---:|:---:|:---:|
+|  0  |  0  |  0  |  0  |
+|  0  |  0  |  1  |  0  |
+|  0  |  1  |  0  |  0  |
+|  0  |  1  |  1  |  0  |
+|  1  |  0  |  0  |  0  |
+|  1  |  0  |  1  |  1  |
+|  1  |  1  |  0  |  1  |
+|  1  |  1  |  1  |  1  |
+
+:::
+
+::: {.table width=[0.5,0.5]}
+Table: `MF7`のコンフィグ; `CNT7/DLY7` "1min counter"
+
+| Property                | Value            |
+|:------------------------|:-----------------|
+| Mode                    | Reset counter    |
+| Counter data            | 59               |
+| Output period (typical) | N/D              |
+| Edge select             | High level reset |
+| DLY IN init. value      | Initial 0        |
+| Output polarity         | Inverted (nOUT)  |
+| Mode signal sync.       | Bypass           |
+| Clock                   | CNT6/DLY6 (OUT)  |
+| Clock frequency         | N/D              |
+
+:::
+
+\newpage
+
+::: {.table width=[0.25,0.25,0.25,0.25]}
+Table: `MF7`のコンフィグ; `3-bit LUT13`（Multiplexer）
+
+|  s  |  a  |  b  |  z  |
+|:---:|:---:|:---:|:---:|
+|  0  |  0  |  0  |  0  |
+|  0  |  0  |  1  |  0  |
+|  0  |  1  |  0  |  1  |
+|  0  |  1  |  1  |  1  |
+|  1  |  0  |  0  |  0  |
+|  1  |  0  |  1  |  1  |
+|  1  |  1  |  0  |  0  |
+|  1  |  1  |  1  |  1  |
+
+:::
+::: {.table width=[0.5,0.5]}
+Table: `PGEN`のコンフィグ; `2-bit LUT3` "32Hz"
+
+| Property  | Value |
+|:----------|:------|
+| Type      | PGEN  |
+| Bit range | 3 : 0 |
+| Pattern   | 0011  |
+
+:::
+
+\newpage
 
 ### 早送りモード
 
@@ -88,15 +188,15 @@ GPAKにはI^2^CやSPIなどのシリアル信号をホストする能力はあ�
 作れます。GreenPAKのDFFはQ出力かnQかのいずれかしか選べないので、nQを選択し、次の桁のクロック入力にします。
 
 これを単純に4桁作ろうとすると、DFFマクロセルが16個必要になり1石では不足します。そこでまず、必要なDFFの桁数を減らします。
-２４時間計は0000から2459までのカウントをしますが、このうち最上位桁は0/1/2で２ビット、３桁目は0~5で３ビットあれば繰り上がりができます。
+２４時間計は0000から2359までのカウントをしますが、このうち最上位桁は0/1/2で２ビット、３桁目は0~5で３ビットあれば繰り上がりができます。
 これで16個が2+4+3+4=13個になります。
 
 カウンタ・タイマモジュールはクロック源に他のカウンタ・タイマモジュールの出力を指定することができます。
 
 [^ref-bcd-counter]: <https://www.petervis.com/dictionary-of-digital-terms/bcd-counter-using-d-flip-flop/bcd-counter-using-d-flip-flop.html>
 
-## ダイナミック点灯信号生成部
-## ＢＣＤ-７セグデコーダ部
+## ダイナミック点灯信号生成部（Config-2）
+## ＢＣＤ-７セグデコーダ部（Config-2）
 
 BCDカウンタの出力をもとに7セグLEDを光らせるための信号を作ります。各セグメント
 の位置と名前は[@fig:segments]の通りです。
@@ -106,8 +206,6 @@ BCDカウンタの出力をもとに7セグLEDを光らせるための信号を�
 [真理値表](data/truth-table.csv){.table alignment=ccccccccccc width=[0.1,0.1,0.1,0.1,0.05,0.05,0.05,0.05,0.05,0.05,0.05]}
 
 ### セグメントごとの論理式
-## クロック分周部
-## 時刻セットをどうするか
 ## まとめ
 
 # あとがき {-}
