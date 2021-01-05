@@ -79,10 +79,35 @@ GPAKにはI^2^CやSPIなどのシリアル信号をホストする能力はあ�
 
 `OSC0`は32Kから2Hzと128Hzに分周します。2Hzをリセットカウンタ`CNT6/DLY6`（`MF6`）で分周して秒クロック（1Hz）にして、さらに1Hzを
 再度リセットカウンタ`CNT7/DLY7`（`MF7`）で60分周して分クロック（1/60Hz）を得ます。128Hzは`PGEN`で分周して32Hzを得て、
-早送りモードに使います。コロンの明滅はEN3信号が有効なときに有効になります(`MF6-LUT12`)。
+早送りモードに使います。コロンの明滅はEN3信号がHのときに有効になります(`MF6-LUT12`)。
 1Hzと32Hzの切り替えはボタン入力をDFF3でラッチして`LUT13`マルチプレクサ（`MF7`）で選択します。
 
-::: {.table width=[0.5,0.5]}
+::: {.table width=[0.4,0.4]}
+Table: `PIN 2`のコンフィグ; `IO0` "XIN"
+
+| Property       | Value                                                 |
+|:---------------|:------------------------------------------------------|
+| I/O selection  | Digital input In mode Digital in with Schmitt trigger |
+| Out mode       | None                                                  |
+| Resistor       | Pull Down                                             |
+| Resistor value | 1M                                                    |
+
+:::
+::: {.table width=[0.4,0.4]}
+Table: `PIN 13`のコンフィグ; `IO8` "SW"
+
+| Property       | Value                                                 |
+|:---------------|:------------------------------------------------------|
+| I/O selection  | Digital input In mode Digital in with Schmitt trigger |
+| Out mode       | None                                                  |
+| Resistor       | Pull Down                                             |
+| Resistor value | 10K                                                   |
+
+:::
+
+\newpage
+
+::: {.table width=[0.4,0.4]}
 Table: `OSC0`のコンフィグ {#tbl:config-osc0}
 
 | Property                 | Value                      |
@@ -95,7 +120,7 @@ Table: `OSC0`のコンフィグ {#tbl:config-osc0}
 | 'OUT1' second divider by | 24                         |
 
 :::
-::: {.table width=[0.5,0.5]}
+::: {.table width=[0.4,0.4]}
 Table: `MF6`のコンフィグ; `CNT6/DLY6` "1sec counter"
 
 | Property                | Value              |
@@ -114,23 +139,22 @@ Table: `MF6`のコンフィグ; `CNT6/DLY6` "1sec counter"
 
 \newpage
 
-::: {.table width=[0.25,0.25,0.25,0.25]}
+::: {.table width=[0.1,0.1,0.1,0.1]}
 Table: `MF6`のコンフィグ; `3-bit LUT12`（Defined by user）
 
-| in2 | in1 | in0 | out |
-|:---:|:---:|:---:|:---:|
-|  0  |  0  |  0  |  0  |
-|  0  |  0  |  1  |  0  |
-|  0  |  1  |  0  |  0  |
-|  0  |  1  |  1  |  0  |
-|  1  |  0  |  0  |  0  |
-|  1  |  0  |  1  |  1  |
-|  1  |  1  |  0  |  1  |
-|  1  |  1  |  1  |  1  |
+| in2 | in1 | in0 | **out** |
+|:---:|:---:|:---:|:-------:|
+|  0  |  0  |  0  |  **0**  |
+|  0  |  0  |  1  |  **0**  |
+|  0  |  1  |  0  |  **0**  |
+|  0  |  1  |  1  |  **0**  |
+|  1  |  0  |  0  |  **0**  |
+|  1  |  0  |  1  |  **1**  |
+|  1  |  1  |  0  |  **1**  |
+|  1  |  1  |  1  |  **1**  |
 
 :::
-
-::: {.table width=[0.5,0.5]}
+::: {.table width=[0.4,0.4]}
 Table: `MF7`のコンフィグ; `CNT7/DLY7` "1min counter"
 
 | Property                | Value            |
@@ -149,7 +173,7 @@ Table: `MF7`のコンフィグ; `CNT7/DLY7` "1min counter"
 
 \newpage
 
-::: {.table width=[0.25,0.25,0.25,0.25]}
+::: {.table width=[0.1,0.1,0.1,0.1]}
 Table: `MF7`のコンフィグ; `3-bit LUT13`（Multiplexer）
 
 |  s  |  a  |  b  |  z  |
@@ -164,7 +188,7 @@ Table: `MF7`のコンフィグ; `3-bit LUT13`（Multiplexer）
 |  1  |  1  |  1  |  1  |
 
 :::
-::: {.table width=[0.5,0.5]}
+::: {.table width=[0.4,0.4]}
 Table: `PGEN`のコンフィグ; `2-bit LUT3` "32Hz"
 
 | Property  | Value |
@@ -203,14 +227,16 @@ BCDカウンタの出力をもとに7セグLEDを光らせるための信号を�
 
 [セグメント](data/segments.txt){.aafigure #fig:segments}
 
-[真理値表](data/truth-table.csv){.table alignment=ccccccccccc width=[0.1,0.1,0.1,0.1,0.05,0.05,0.05,0.05,0.05,0.05,0.05]}
+[真理値表](data/truth-table.csv){.table alignment=cccccccccccc
+                                width="[0.05,0.075,0.075,0.075,0.075,0.05,0.05,0.05,0.05,0.05,0.05,0.05]"}
 
 ### セグメントごとの論理式
 ## まとめ
 
 # あとがき {-}
 
-- 原稿PDFはこのQRコードからたどってください ![](images/QRcode.png){#fig:manuscript width=30%}
+- `{\large`{=latex} **緑のLEDを買い占めたのは誰ですか？めっちゃ困るんですけど！色変更せざるを得なかったんですけど！** `}`{=latex}
+- 原稿PDFはこのQRコードからたどってください ![](images/QRcode.png){#fig:manuscript width=15mm}
 - `{\large`{=latex}[Stargate SG-1]{.underline}っていう海外SFドラマシリーズ知ってる人いますか？`}`{=latex}
 - 表紙の画像は
   [<https://commons.wikimedia.org/wiki/File:MilkyWay_Stargate_blank.svg>]{.underline}から拝借しました。
