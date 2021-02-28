@@ -3,6 +3,7 @@
 :::
 
 # まえがき {-}
+
 ## このドキュメントは何
 
 この本は、*ふと欲しくなった「夜でも視認性の良い時計」を作ってみ*るまでをまとめた
@@ -16,7 +17,7 @@ Chevronは映画「スターゲイト(STARGATE)」とその後のSF TVシリー�
 ７個のシンボル（目的地６個、最後に始点１個）を入力します。１つめがChevron one、最後がChevron sevenです。
 
 [^when-netflix-comes]: アメリカ本国ではNETFLIXでTVシリーズが配信開始しました。
-それを聞いてすぐに契約したんですが、日本には全然降ってきませんねー。
+それを聞いてすぐに契約したんですが、日本には全然降ってきませんねー。吹替版はすでにあるのになー。
 
 ### なぜ[７]{.underline}なのか
 
@@ -31,25 +32,28 @@ Chevronは映画「スターゲイト(STARGATE)」とその後のSF TVシリー�
 
 ## このドキュメントのゴール
 
-マイコンによる時計の作例は山ほどあることと、**勝手にアプリケーションノート**のネタに
-ちょうどよかったことからGreenPAKを採用しました。
+マイコンによる時計の作例は山ほどあることと、**勝手にアプリケーションノート**のネタに ちょうどよかったことからGreenPAKを採用しました。
 
 この本に出てくる回路は**SLG46826**のために設計されています。
 
 # そうだ、時計、作ろう
+
 ## 機能概要
 
-この作例「Chevron7」は「Chevron1」基板を2枚（すなわちSLG46826を2石）使っています。
+この作例「Chevron7」は「Chevron1」基板を2枚（すなわちSLG46826を2石）、RTCとトランジスタアレイを１石ずつ使っています。
+
+![完成基板外観](images/chevron7-topview.jpg){#fig:assy-topview width=150mm}
 
 ## ブロック図
 
 [@fig:block-diagram]にブロック図を示します。RTCによる32.768KHzをクロック源にして分周し、
 4桁のBCDにエンコードするブロック（Config-1）、LEDのダイナミック点灯とＢＣＤ−７セグデコーダブロック（Config-2）
 に大別され、それぞれにSLG46826を1個ずつ割り当てています（[@fig:block-diagram]）。LEDはカソードコモンタイプを使います。
+カソードドライバにはTBD62083（８回路トランジスタアレイ）を使います。
 
-\newpage
+<!--\newpage-->
 
-[Block diagram](data/block-diagram-2.bob){.svgbob #fig:block-diagram}
+[Block diagram](data/block-diagram-2.bob){.svgbob #fig:block-diagram height=150mm}
 
 \newpage
 
@@ -59,15 +63,15 @@ Chevronは映画「スターゲイト(STARGATE)」とその後のSF TVシリー�
 SLG46826は専用の水晶発振回路ブロックを持っていないので、IOピンを使って実現する[^io-oscillator-an]か、
 RTC（リアルタイムクロック）などを基準クロックにする必要があります。
 今回はRTC「RX-8581NB[^rx8581nb]」の32.768KHz出力（~~めんどいので~~今後は32Kと表記）を受け分周する設計にしました。
+このICはFOEピンをHにするとでFOUTピンから基準クロック（デフォルトは32.768KHz）がでてきます。本来ならI^2^Cによる外部アクセスで
+数種類の周波数から設定できますが、GPAKにはI^2^CやSPIなどのシリアル信号をホストする能力はありません[^would-work-but-waste]。
+したがって、ロジックのみでクロック出力と周波数の設定ができる品種を選定する必要がありました。
 
 [^io-oscillator-an]: IOピンを使うオシレータ回路の例がアプリケーションノートとして提供されています。\
 <https://www.dialog-semiconductor.com/AN-CM-233>
 [^rx8581nb]: https://www5.epsondevice.com/ja/products/rtc/rx8581nb.html
 
 ![RX-8581NB ピン配置（データシートより抜粋）](images/RX-8581NB_pinout.png){#fig:rtc-pinout width=100mm}
-
-GPAKにはI^2^CやSPIなどのシリアル信号をホストする能力はありません[^would-work-but-waste]。
-したがって、シリアル通信でレジスタにアクセスしてクロックを出力させるタイプのRTCは使えません。
 
 [^would-work-but-waste]: こうやって断定的に無理というのもどうかと思いますが、
 少なくとも既存の品種は全部、マクロセルを全部消費しなければならない程度には小規模なのです。
@@ -193,7 +197,7 @@ Table: `MF7`のコンフィグ; `CNT7/DLY7` "1min counter"
 
 \newpage
 
-::: {.table width=[0.1,0.1,0.1,0.1]}
+::: {.table width=[0.1,0.15,0.15,0.1]}
 Table: `MF7`のコンフィグ; `3-bit LUT13`（Multiplexer）
 
 | s（SW） | a（1Hz） | b（32Hz） |  z  |
@@ -254,10 +258,10 @@ SLG46826には最大3ビットの任意リセットカウンタマクロセル�
 [^ref-bcd-counter]: <https://www.petervis.com/dictionary-of-digital-terms/bcd-counter-using-d-flip-flop/bcd-counter-using-d-flip-flop.html>
 
 ## ダイナミック点灯信号生成部（Config-2）
+
 ## ＢＣＤ-７セグデコーダ部（Config-2）
 
-BCDカウンタの出力をもとに7セグLEDを光らせるための信号を作ります。各セグメント
-の位置と名前は[@fig:segments]の通りです。
+BCDカウンタの出力をもとに7セグLEDを光らせるための信号を作ります。各セグメント の位置と名前は[@fig:segments]の通りです。
 
 [セグメント](data/segments.txt){.aafigure #fig:segments}
 
@@ -265,6 +269,7 @@ BCDカウンタの出力をもとに7セグLEDを光らせるための信号を�
                                 width="[0.05,0.075,0.075,0.075,0.075,0.05,0.05,0.05,0.05,0.05,0.05,0.05]"}
 
 ### セグメントごとの論理式
+
 ## まとめ
 
 # あとがき {-}
