@@ -17,7 +17,7 @@
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
@@ -44,9 +44,9 @@
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="yes" active="yes"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
@@ -64,7 +64,7 @@
 <layer number="98" name="Guide" color="6" fill="1" visible="no" active="no"/>
 <layer number="100" name="Muster" color="7" fill="1" visible="no" active="no"/>
 <layer number="101" name="Attributes" color="7" fill="1" visible="no" active="yes"/>
-<layer number="102" name="Vscore" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="102" name="Vscore" color="7" fill="1" visible="no" active="yes"/>
 <layer number="103" name="tMap" color="7" fill="1" visible="no" active="yes"/>
 <layer number="104" name="Name" color="7" fill="1" visible="no" active="yes"/>
 <layer number="217" name="217bmp" color="18" fill="1" visible="no" active="no"/>
@@ -972,7 +972,7 @@ design rules under a new name.</description>
 <element name="SW1" library="mylib" package="SW-TACTSW-TL1105S" value="" x="19.2" y="44.6" locked="yes" smashed="yes" rot="R180">
 <attribute name="DIGIKEY" value="EG1839-ND" x="19.2" y="44.6" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="TH-PAD" value="4" x="19.2" y="44.6" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="14" y="44.6" size="1.2" layer="25" font="vector" ratio="17" rot="R270" align="center"/>
+<attribute name="NAME" x="19.2" y="39.6" size="1.2" layer="25" font="vector" ratio="17" align="center"/>
 <attribute name="VALUE" x="19.2" y="44.6" size="1.2" layer="27" font="vector" rot="R180" align="center"/>
 <attribute name="MOUSER" value="EG1839-ND" x="19.2" y="44.6" size="1.778" layer="27" rot="R180" display="off"/>
 </element>

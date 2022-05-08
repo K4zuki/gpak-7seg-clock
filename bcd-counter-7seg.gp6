@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GPDProject version="10" oldestCompatibleVersion="9" GPDVersion="6.21.005" lastChange="5/4/2020 12:31 AM">
+<GPDProject version="10" oldestCompatibleVersion="9" GPDVersion="6.21.005" lastChange="2020/05/15 21:59">
     <generalProjectSettings/>
     <chip family="04" type="06" friendlyName="GreenPAK 6" partNumber="36" package="16">
         <nvmData registerLenght="2048">1E A1 1 D5 55 51 91 64 61 99 96 69 12 96 69 99 E4 4C 14 F6 5B 1F 80 65 9A 4 0 0 E7 38 9C E3 70 8E 83 65 1A 96 69 58 A6 9 1F 0 0 0 0 0 0 0 0 0 B0 1 0 B0 FE 6A A 15 67 E1 16 4F D1 16 6C 71 15 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 51 71 0 FC 71 21 7C 0 0 FC F8 3 0 3 3 3 3 3 3 0 0 0 0 0 0 0 0 0 0 0 0 1 0 7 6 0 94 22 30 C 0 0 0 0 0 0 0 E2 5E 0 0 40 10 10 80 D0 C2 11 78 78 66 0 0 0 8C 8E 20 0 1 0 0 0 2 1 20 40 D6 E 9 8C 0 D6 3B 20 10 D6 6 17 0 60 2 1 0 4 2 0 1 0 BA 2 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 A5</nvmData>
@@ -639,7 +639,7 @@ REF3 : https://www.dialog-semiconductor.com/sites/default/files/an-cm-233_extern
         <settings>
             <autoApply value="0"/>
             <programmingOptions programNVM="1" programEEPROM="0"/>
-            <platformSelector id="3"/>
+            <platformSelector id="0"/>
         </settings>
         <platform id="0" friendlyName="GreenPAK DIP Development Platform">
             <lastConfiguration modified="1">
