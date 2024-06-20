@@ -1,6 +1,6 @@
 ---
 title: ７セグ時計ICを自作する本
-subtitle: Chevron7 *Lock*
+subtitle: Chevron7 *Locked*
 circle: KY技研
 author: "@_K4ZUKI_"
 comiket: 技術書典７
@@ -41,26 +41,33 @@ numbered-bullets:
 image-div-style: "Image Caption"
 
 docx_coreprop:
-  author: "K4ZUKI" # str
-  category: "Category" # str
-  comments: "Comment" # str
-  keywords: "Keyword1 Keyword2" # str
-  last_modified_by: "K4ZUKI" # str
-  last_printed: "31-Dec-2018" # datetime DD-MMM-YYYY
-  modified: "31-Dec-2018" # datetime DD-MMM-YYYY
-  revision: 1123 # int < 32768
-  subject: "SubjecT" # str
-  title: "Title" # str
+  #  author: "K4ZUKI" # str
+  #  category: "Category" # str
+  #  comments: "Comment" # str
+  #  keywords: "Keyword1 Keyword2" # str
+  #  last_modified_by: "K4ZUKI" # str
+  #  last_printed: "31-Dec-2018" # datetime DD-MMM-YYYY
+  #  modified: "31-Dec-2018" # datetime DD-MMM-YYYY
+  #  revision: 1123 # int < 32768
+  #  subject: "SubjecT" # str
+  #  title: "Title" # str
 
-  #created: "31-Dec-2018" # datetime DD-MMM-YYYY set externally
-  content_status: "Status" # ignored?
-  identifier: "ID" # ignored?
-  language: "Japanese" # ignored?
-  version: "Version" # ignored?
+  #  created: "31-Dec-2018" # datetime DD-MMM-YYYY set externally
+  #  content_status: "Status" # ignored?
+  #  identifier: "ID" # ignored?
+  #  language: "Japanese" # ignored?
+  #  version: "Version" # ignored?
 
+  table-alignment-in-page: center # left / center /right
+  table-cell-vertical-alignment: center # top / center / bottom / both
+  #  read-only-recommended: true
+  disable-table-autofit: true # setting 'true' requires explicit column widths setting
   table:
     "Normal Table": "Centered"
   paragraph:
+    "Image Caption": "Figure Caption"
     "Normal": "Body Text"
     "First Paragraph": "Body Text"
+  character:
+    "Verbatim Char": "NormalTok"
 ...
