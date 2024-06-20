@@ -17,6 +17,7 @@ PROJECT= `pwd`
 
 # CONFIG:= config.yaml
 # INPUT:= TITLE.md
+SYSTEM_DOCXFRONTPAGE := $(MDDIR)/frontpage.md
 # TARGET:= TARGET-$(DATE)-$(HASH)
 # REVERSE_INPUT:= reverse-input.docx
 # REFERENCE:= $(MISC)/ref.docx
